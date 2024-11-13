@@ -1,7 +1,7 @@
 streamlit
 Pillow==9.2.0
 torch==2.5.1+cu118
-transformers==4.46.2
+transformers
 lime==0.2.0.1
 scikit-image==0.24.0
 scikit-learn==1.5.2
