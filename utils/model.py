@@ -7,7 +7,7 @@ import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
 
 # Load the model and labels (cached for efficiency)
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     """
     Loads class labels and the Vision Transformer (ViT) model, with error handling to catch any issues.
