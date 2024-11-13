@@ -9,6 +9,6 @@
 - `generate_textual_explanation(explanation, top_indices, class_labels, img)`: Creates text-based explanations for each top prediction.
 
 ## model.py
-- `load_model()`: Loads the ViT model and class labels, configuring them for classification.
+- `load_model()`: Loads the ViT model and processor directly from Hugging Face, along with class labels. It sets up the model for prediction, mapping indices to labels and vice versa.
 
 Each function has been optimized for use in Streamlit and works with the ViT model.

@@ -14,3 +14,5 @@ cleaned_pokemon.csv
 pokemon.csv
 utils/__pycache__/*
 utils/__pycache__/
+upload_huggingface.py
+pokemon_classifier_vit/*

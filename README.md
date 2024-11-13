@@ -1,12 +1,12 @@
 # Pokémon Classifier with LIME Explanations
 
-A fun app that lets you upload Pokémon images and get predictions with explanations! This project uses a Vision Transformer (ViT) model to classify Pokémon images and provides interpretability using LIME to highlight the image regions that contribute to each prediction.explanations.
+This is a fun little app that lets you upload Pokémon images to get instant predictions with explanations! Using a Vision Transformer (ViT) model, it classifies Pokémon images and uses LIME to highlight which parts of the image contributed most to each prediction.
 
 ## Overview
 
-This project is a hands-on look at machine learning, model interpretability, and web app development. Powered by a Vision Transformer, it recognizes Pokémon from images, providing LIME (Local Interpretable Model-Agnostic Explanations) visualizations that reveal which areas of the image contributed to the model's predictions.
+This project dives into machine learning, interpretability, and web app development. Powered by a Vision Transformer, the app identifies Pokémon and uses LIME (Local Interpretable Model-Agnostic Explanations) to show which areas of the image influenced the model's decisions.
 
-Note: The model might get a bit iffy on newer-gen Pokémon (working on it!). But, hey, classics are always a safe bet.
+Note: The model might be a bit uncertain with newer-gen Pokémon, but it’s solid with the classics. More data and updates are in the works!
 
 ## Features
 
@@ -15,6 +15,7 @@ Note: The model might get a bit iffy on newer-gen Pokémon (working on it!). But
 - **Interactive Web Interface**: Friendly and easy-to-use interface built with Streamlit.
 
 ## Installation
+
 ### Prerequisites
 
 - Python 3.7 or higher
@@ -29,9 +30,11 @@ Fire up the app with:
 
 ```streamlit run app.py```
 
-It'll open in your browser, and from there, just upload a pic of a Pokémon to see the classification and LIME magic in action.
+This will open the app in your browser. From there, just upload a Pokémon image, and the app will display the classification and explanations.
 
 ## Demo
+
+Coming Soon: GIF or screenshot showing the app in action
 
 ## Data Limitations
 
@@ -40,7 +43,7 @@ It'll open in your browser, and from there, just upload a pic of a Pokémon to s
 
 ## Project Goals
 
-This is more than just a classifier – it’s part of a class project where I dive into machine learning workflows and interpretability. Using LIME here is a cool way to show how you can make complex models more transparent.
+Beyond just being a classifier, this project is part of a class assignment exploring machine learning workflows and model interpretability. Using LIME here makes complex models more understandable and transparent.
 
 ## Contributing
 
@@ -70,8 +73,8 @@ Big shoutout to [Hugging Face Transformers]([https://huggingface.co/google/vit-b
 Here’s what to include in the `docs`/ folder so others can easily follow along or contribute:
 
 1. `setup_guide.md`:
-     - Step-by-step instructions on getting the project up and running.
-      - Common troubleshooting tips (like resolving installation issues).
+   - Step-by-step instructions on getting the project up and running.
+   - Common troubleshooting tips (like resolving installation issues).
 
 2. `model_explained.md`:
     - A rundown of the Vision Transformer (ViT) model: why we chose it, how it’s trained, and its limitations.
@@ -91,7 +94,7 @@ Here’s what to include in the `docs`/ folder so others can easily follow along
 6. `changelog.md`:
     - A running list of updates, fixes, and new features added to the project.
 
-These docs will keep everything organized and help anyone interested in understanding, using, or contributing to the project. Let me know if you want help writing any of these files!
+These docs should make it easy to understand, use, and contribute to the project. Let me know if you need help with any of them!
 
 ## Contact
 

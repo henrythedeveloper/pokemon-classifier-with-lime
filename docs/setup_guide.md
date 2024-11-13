@@ -25,6 +25,9 @@ Follow these steps to set up the Pokémon Classifier project.
    streamlit run app.py
    ```
 
+## Model Loading on Hugging Face
+The model is hosted on Hugging Face and will load automatically when you run the app. No need to download anything manually! Just run `app.py`, and the model will download directly from [HenryLeSD/pokemon-classifier-vit](https://huggingface.co/HenryLeSD/pokemon-classifier-vit).
+
 ## Troubleshooting
 - If you encounter issues with dependencies, try setting up a new virtual environment.
 - If `streamlit` fails to launch, check for errors in the terminal and consult the project’s README.

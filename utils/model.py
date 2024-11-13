@@ -23,9 +23,9 @@ def load_model():
     class_labels = {int(k): v.split(" - ")[1] for k, v in raw_class_labels.items()}
     label2id = {v: k for k, v in class_labels.items()}  # Reverse mapping (label to index)
 
-    # Load the model and processor
+    # Load the model and processor directly from Hugging Face
     try:
-        model = ViTForImageClassification.from_pretrained("pokemon_classifier_vit_pytorch")
+        model = ViTForImageClassification.from_pretrained("HenryLeSD/pokemon-classifier-vit")
         processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
     except Exception as e:
         st.error(f"Error loading model or processor: {e}")
