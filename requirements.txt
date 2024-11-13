@@ -1,26 +1,11 @@
-# Pokémon Classifier with LIME Explanations - Dependencies
-#
-# Here’s the rundown on what each package does for us:
-# - streamlit: our main app framework, handles all the interactive web elements
-# - Pillow: deals with image processing so we can upload and work with Pokémon images
-# - torch: the core library for PyTorch, powers our Vision Transformer model
-# - transformers: from Hugging Face, gives us the ViT model and all the tools we need with it
-# - lime: generates explanations to show why the model makes certain predictions
-# - scikit-image: for creating image segments (aka superpixels) that help with LIME explanations
-# - numpy: does the heavy lifting on numerical operations throughout the app
-# - pandas: keeps prediction data organized and display-ready
-# - scikit-learn: supports LIME and other machine learning utilities
-# - stqdm: adds progress bars in Streamlit to track LIME explanation generation
-
-streamlit>=1.12.2
+streamlit==1.12.2
 Pillow==9.2.0
-torch>=2.0,<3.0
-transformers==4.21.0
+torch==2.5.1+cu118
+transformers==4.46.2
 lime==0.2.0.1
 scikit-image==0.24.0
-numpy==1.26.0
-pandas==2.2.3
 scikit-learn==1.5.2
+numpy==2.1.3
+pandas==2.2.3
 stqdm==0.0.5
-setuptools
-
+protobuf==3.20.3
