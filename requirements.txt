@@ -18,7 +18,9 @@ torch>=2.0,<3.0
 transformers==4.21.0
 lime==0.2.0.1
 scikit-image==0.24.0
-numpy==1.24.2
+numpy==1.26.0
 pandas==2.2.3
 scikit-learn==1.5.2
 stqdm==0.0.5
+setuptools
+
