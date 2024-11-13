@@ -17,3 +17,5 @@ utils/__pycache__/
 upload_huggingface.py
 pokemon_classifier_vit_pytorch/*
 pokemon_classifier_vit_pytorch
+pokemon-classifier-vit
+pokemon-classifier-vit/*
