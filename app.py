@@ -9,8 +9,7 @@ import torch.nn.functional as F
 import numpy as np
 import pandas as pd
 from skimage.segmentation import mark_boundaries
-from utils.lime_explainer import generate_textual_explanation
-from utils import load_model, explain_with_lime, process_image, visualize_superpixels, setup_logging
+from utils import load_model, explain_with_lime, generate_textual_explanation, process_image, visualize_superpixels, setup_logging
 from stqdm import stqdm  # Making sure stqdm is imported
 
 # Set up logging for troubleshooting
@@ -24,9 +23,12 @@ This app classifies an image of a Pokémon using a Vision Transformer model, and
 
 # Load the model and labels
 model, processor, class_labels, label2id = load_model()
-if model is None or processor is None:
-    st.error("Failed to load the model or processor.")
-    st.stop()  # Stop everything if we can’t load the essentials
+
+# Check if model loading was successful
+if model is None:
+    st.error("Model could not be loaded. Please check your configuration.")
+else:
+    st.success("Model loaded successfully!")
 
 # Section for segmentation parameters
 st.markdown('''
@@ -78,7 +80,7 @@ if uploaded_file is not None:
         st.subheader("LIME Explanations")
         cols = st.columns(len(top_indices))
         for i, idx in enumerate(top_indices):
-            if idx in explanation.local_exp:
+            try:
                 # Highlight important regions of the image
                 temp, mask = explanation.get_image_and_mask(
                     label=idx,
@@ -88,9 +90,10 @@ if uploaded_file is not None:
                 )
                 img_boundary = mark_boundaries(temp / 255.0, mask)
                 cols[i].image(img_boundary, caption=f"{class_labels[idx]}")
-            else:
-                st.write(f"No LIME explanation found for {class_labels[idx]}")
-
+            except Exception as e:
+                st.warning(f"No LIME explanation found for {class_labels[idx]}")
+                logger.warning(f"LIME explanation error for {class_labels[idx]}: {e}")
+        
         # Generate textual explanation with a loading spinner
         with st.spinner('Generating textual explanations...'):
             try:
