@@ -12,9 +12,9 @@
 # - scikit-learn: supports LIME and other machine learning utilities
 # - stqdm: adds progress bars in Streamlit to track LIME explanation generation
 
-streamlit==1.12.2
+streamlit>=1.12.2
 Pillow==9.2.0
-torch==2.0.1
+torch>=2.0,<3.0
 transformers==4.21.0
 lime==0.2.0.1
 scikit-image==0.24.0
