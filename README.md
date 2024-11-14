@@ -34,7 +34,7 @@ This will open the app in your browser. From there, just upload a Pokémon image
 
 ## Demo
 
-Coming Soon: GIF or screenshot showing the app in action
+[Streamlit App](https://pokemon-classifier.streamlit.app/)
 
 ## Data Limitations
 
