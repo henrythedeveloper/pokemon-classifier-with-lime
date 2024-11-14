@@ -14,6 +14,7 @@ def process_image(img, processor, device):
     inputs = processor(images=img, return_tensors="pt").to(device)
     return inputs["pixel_values"]
 
+@st.cache_data
 def visualize_superpixels(img, n_segments, compactness):
     """
     Applies superpixel segmentation to show the underlying structure of the image.

@@ -16,10 +16,13 @@ def load_model():
     try:
         with open("class_labels.json", "r") as f:
             raw_class_labels = json.load(f)
-    except Exception as e:
-        st.error(f"Error loading class labels: {e}")
+    except FileNotFoundError as e:
+        st.error("Class labels file not found. Please ensure `class_labels.json` is in the project directory.")
         return None, None, None, None
-
+    except json.JSONDecodeError as e:
+        st.error("Class labels file is corrupted. Please check the file format.")
+        return None, None, None, None
+    
     # Process class labels to map from index to label name
     class_labels = {int(k): v.split(" - ")[1] for k, v in raw_class_labels.items()}
     label2id = {v: k for k, v in class_labels.items()}  # Reverse mapping (label to index)

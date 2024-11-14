@@ -10,10 +10,12 @@ import numpy as np
 import pandas as pd
 from skimage.segmentation import mark_boundaries
 from utils import load_model, explain_with_lime, generate_textual_explanation, process_image, visualize_superpixels, setup_logging
-from stqdm import stqdm  # Making sure stqdm is imported
+from stqdm import stqdm
+import json
 
 # Set up logging for troubleshooting
-logger = setup_logging()
+logger = setup_logging("pokemon_classifier.log")
+
 
 # Kick off the app with a title and brief description
 st.title('Pokémon Classifier with LIME Explanations')
@@ -36,11 +38,16 @@ st.markdown('''
 - **Number of segments**: Controls the number of segments (or "superpixels") in the image. More segments mean more detail.
 - **Compactness**: Balances color proximity with spatial proximity. Higher values make the segments more square-shaped.
 ''')
-n_segments = st.slider('Number of segments', min_value=10, max_value=100, value=50)
-compactness = st.slider('Compactness', min_value=1, max_value=100, value=30)
+
+# Load configuration for segmentation parameters
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
+
+n_segments = st.slider('Number of segments', min_value=10, max_value=100, value=config["n_segments_default"])
+compactness = st.slider('Compactness', min_value=1, max_value=100, value=config["compactness_default"])
 
 # Check if GPU is available; use CPU otherwise
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device(config["device"] if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # Upload image file

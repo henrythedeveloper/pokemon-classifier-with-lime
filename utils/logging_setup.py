@@ -4,12 +4,12 @@ Sets up logging for the app - helpful for tracking down issues and keeping an ey
 
 import logging
 
-def setup_logging():
-    """
-    Configures logging with a basic setup at INFO level.
-    You can adjust the level or add more configurations here if needed.
-    """
-    logging.basicConfig(level=logging.INFO)
+def setup_logging(log_filename="app.log"):
+    logging.basicConfig(
+        filename=log_filename,
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     logger = logging.getLogger(__name__)
     return logger
 
