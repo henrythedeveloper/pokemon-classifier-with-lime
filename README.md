@@ -54,9 +54,6 @@ Want to help? Here’s the plan:
 3. Commit and push it to your fork.
 4. Open a pull request with the details.
 
-## License
-
-MIT License – check the [LICENSE](LICENSE) file for all the legal stuff.
 
 ## Acknowledgments
 
