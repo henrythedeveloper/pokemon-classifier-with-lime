@@ -57,11 +57,6 @@ Want to help? Here’s the plan:
 
 ## Acknowledgments
 
-- [Hugging Face Transformers]([https://huggingface.co/google/vit-base-patch16-224-in21k]) -  For the ViT model and tools.
-- [LIME](https://github.com/marcotcr/lime) - For making model explanations possible.
-- [Streamlit](https://streamlit.io/) - For the fantastic web app framework.
-- Shoutout to my instructor and classmates for the guidance and support!
-
 Big shoutout to [Hugging Face Transformers]([https://huggingface.co/google/vit-base-patch16-224-in21k]) for the ViT model, [LIME](https://github.com/marcotcr/lime) for model explanations, and [Streamlit](https://streamlit.io/) for making interactive web apps easy. Also, thanks to my class instructor and classmates for the support.
 
 ---
